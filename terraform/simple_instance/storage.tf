@@ -14,6 +14,9 @@ provider "azurerm" {
 resource "azurerm_resource_group" "trekgroup" {
   name     = "trekgroup-resources"
   location = "West US"
+  tags = {
+    yor_trace = "5e6c8699-f708-40cf-91ba-e7a0ba6e3fba::GxRZZuEt0y12GqLa8jg3ELMV1XM"
+  }
 }
 
 resource "azurerm_storage_account" "storagebay" {
@@ -22,4 +25,7 @@ resource "azurerm_storage_account" "storagebay" {
   location                 = azurerm_resource_group.trekgroup.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
+  tags = {
+    yor_trace = "5e6c8699-f708-40cf-91ba-e7a0ba6e3fba::GxRZZuEt0y12GqLa8jg3ELMV1XM"
+  }
 }
