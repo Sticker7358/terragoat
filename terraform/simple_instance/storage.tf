@@ -14,6 +14,10 @@ provider "azurerm" {
 resource "azurerm_resource_group" "trekgroup" {
   name     = "trekgroup-resources"
   location = "West US"
+  tags = {
+    git_org  = "Sticker7358"
+    git_repo = "terragoat"
+  }
 }
 
 resource "azurerm_storage_account" "storagebay" {
@@ -22,4 +26,8 @@ resource "azurerm_storage_account" "storagebay" {
   location                 = azurerm_resource_group.trekgroup.location
   account_tier             = "Standard"
   account_replication_type = "GRS"
+  tags = {
+    git_org  = "Sticker7358"
+    git_repo = "terragoat"
+  }
 }
